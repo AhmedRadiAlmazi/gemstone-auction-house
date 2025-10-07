@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemstone Auction House</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'tajawal': ['Tajawal', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-gold': {
+                            light: '#d4af37',
+                            DEFAULT: '#c09d2d',
+                            dark: '#ab8822',
+                        },
+                        'brand-charcoal': {
+                            light: '#2a2a2a',
+                            DEFAULT: '#1a1a1a',
+                            dark: '#0f0f0f',
+                        },
+                    },
+                    keyframes: {
+                        'ripple': {
+                            '0%': { transform: 'scale(0.8)', opacity: '1' },
+                            '100%': { transform: 'scale(2.4)', opacity: '0' },
+                        },
+                        'glow': {
+                            '0%, 100%': { textShadow: '0 0 5px #d4af37, 0 0 10px #d4af37, 0 0 15px #d4af37' },
+                            '50%': { textShadow: '0 0 10px #d4af37, 0 0 20px #d4af37, 0 0 30px #d4af37' },
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        'particle-float-1': {
+                            '0%': { transform: 'translate(0, 0)', opacity: '1' },
+                            '100%': { transform: 'translate(15vw, -100vh)', opacity: '0' },
+                        },
+                        'particle-float-2': {
+                            '0%': { transform: 'translate(0, 0)', opacity: '1' },
+                            '100%': { transform: 'translate(-20vw, -100vh)', opacity: '0' },
+                        },
+                        'particle-float-3': {
+                            '0%': { transform: 'translate(0, 0)', opacity: '1' },
+                            '100%': { transform: 'translate(10vw, -100vh)', opacity: '0' },
+                        },
+                    },
+                    animation: {
+                        'ripple': 'ripple 0.6s linear',
+                        'glow': 'glow 2.5s ease-in-out infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .ripple-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .ripple-effect .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            animation: ripple 0.6s linear;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+<body class="bg-white dark:bg-brand-charcoal-dark transition-colors duration-500">
+    <div id="root"></div>
+    <audio id="bid-sound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3" preload="auto"></audio>
+</body>
+</html>
